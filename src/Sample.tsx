@@ -8,7 +8,7 @@ import * as smpIdl2 from './idl.json';
 import * as smpIdl from './data/solana_movie_program.json';
 import * as anchor from "@project-serum/anchor";
 
-const RE_PLASTIC_TRACKER_PROGRAM_ID = 'Aq6sLZDjh3MiwpWyk1J84RQT7vKZfGtsZRaNGHtQfEwv'
+const RE_PLASTIC_TRACKER_PROGRAM_ID = 'CnBe9kijpRjNv5ts2iUCKDGaZmoFVhtLTDTb1R7VSWDT'
 
 const MOVIE_REVIEW_PROGRAM_ID = '2SogeA4hASCYGTSQqoSqKy8cZ3bnka5N5U9Ewkswkyf5'
 
@@ -16,9 +16,9 @@ const MOVIE_REVIEW_PROGRAM_ID = '2SogeA4hASCYGTSQqoSqKy8cZ3bnka5N5U9Ewkswkyf5'
 function Sample () {
     const { connection } = useConnection();
     const wallet = useAnchorWallet();
-
+    console.log(wallet?.publicKey.toString())
     const trialReadMovie = async () => {
-        if (!wallet?.publicKey) {
+        if (!wallet?.publicKey.toString()) {
             // alert('Please connect your wallet!')
             return
         };
