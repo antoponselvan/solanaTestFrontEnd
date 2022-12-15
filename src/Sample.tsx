@@ -105,7 +105,8 @@ function Sample () {
             )
         ) 
         console.log(smpClient.account);
-        const [pda] = web3.PublicKey.findProgramAddressSync(
+        
+        const [pda] = await web3.PublicKey.findProgramAddress(
             [
                 wallet.publicKey.toBuffer(), 
                 Buffer.from(anchor.utils.bytes.utf8.encode("trial1111"))
